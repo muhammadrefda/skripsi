@@ -1,0 +1,57 @@
+GURU:
+1.	pilih mata pelajaran-> masukkin bab berapa -> start input UH
+
+	di ulangan harian guru bisa:
+	1. Masukkin soal
+	2. Masukkin Jawaban
+	3. Masukkin Keyword
+	4. simpan
+
+2.	guru bisa manage UH (crud)
+3. 	guru bisa	
+
+
+	HTTP REQUEST
+	1. get:  lihat soal yang telah di edit
+	2. POST: soal, jawaban, keyword, 
+
+
+MURID:
+	pilih mata pelajaran->bab berapa?->mulai test
+	1. mulai test
+Route::get('/bank-soal', function () {
+    return view('bank-soal');
+});
+
+111111111``````````````````````````
+	
+	BUAT API YG AKAN DITEMBAK KE MOBILE	
+HTTP REQUEST
+	1. get: nampilin test
+	2. POST: selesai test
+``````````````````````````````````````````
+
+1.KERJAIN ADMIN PANEL DULU
+	- TAMPILAN (done)
+2.Brainstorming penerapan db ke mvc
+
+***********************************
+Brainstorming penerapan db ke mvc
+***********************************
+1. tentuin model
+	table db : user(guru & siswa), mata pelajaran, chapter, ulangan harian, uh 
+2. tentuin controller
+3. tentuin rest api 
+
+
+
+
+1. dibagian siswa disuruh dia daftar dgn field
+	nama:
+	kelas:
+	no. absen:
+	nilai:
+	kkm:
+
+
+
