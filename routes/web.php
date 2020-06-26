@@ -14,5 +14,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('bank-soal');
+});
+
+Route::get('/table', function () {
+    return view('tables');
+});
+
+
+Route::get('/login', function () {
+    return view('admin.login');
+});
+
+
+Route::get('/register', function () {
+    return view('admin.register');
+});
+
+Route::get('/bank-soal', function () {
+    return view('bank-soal');
+});
+
+
+Route::get('/tambah-soal', function () {
+    return view('admin.index');
 });
