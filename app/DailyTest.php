@@ -4,9 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MataPelajaran extends Model
+class DailyTest extends Model
 {
     protected $fillable = [
-        'nama'
+        'pertanyaan',
+        'jawaban',
+        'kata_kunci'
     ];
 }
