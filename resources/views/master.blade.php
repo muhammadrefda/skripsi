@@ -54,7 +54,7 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="/bank-soal">
+            <a class="nav-link" href="/mata-pelajaran/">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Bank Soal</span></a>
         </li>
@@ -64,9 +64,9 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="/table">
+            <a class="nav-link" href="/nilai/">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
+                <span>Nilai</span></a>
         </li>
 
         <!-- Divider -->
