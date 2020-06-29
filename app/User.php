@@ -10,11 +10,6 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    const VERIFIED_USER = '1';
-    const UNVERIFIED_USER = '0';
-
-    const ADMIN_USER = 'true';
-    const REGULAR_USER = 'false';
 
     /**
      * The attributes that are mass assignable.
@@ -25,10 +20,18 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'verified',
-        'verified_token',
-        'admin',
+        'grade',
+        'attendance_number',
+
     ];
+
+    public function subject (){
+        return $this->hasOne(Subject::class);
+    }
+
+    public function score (){
+        return $this->hasOne(Score::class);
+    }
 
     /**
      * The attributes that should be hidden for arrays.

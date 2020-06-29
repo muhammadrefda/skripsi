@@ -11,4 +11,12 @@ class DailyTest extends Model
         'jawaban',
         'kata_kunci'
     ];
+
+    public function chapter (){
+        $this->belongsTo(Chapter::class);
+    }
+
+    public function score(){
+        $this->hasOne(Score::class);
+    }
 }
