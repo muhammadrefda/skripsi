@@ -17,17 +17,23 @@
         <div class="card-header py-3">
         </div>
         <div class="card-body">
-            <form>
+            <form action="{{route('soal.store')}}" method="POST">
+                @csrf
                 <div class="form-group">
                     <label for="FormControlSelectMaPel">Pilih Mata Pelajaran</label>
+{{--                    @foreach($dailyTests as $dailyTest)--}}
                     <select class="form-control" id="exampleFormControlSelect1">
-                        <option>Pilih Mata Pelajaran</option>
-                        <option>Bahasa Indonesia</option>
-                        <option>Ilmu Pengetahuan Sosial</option>
-                        <option>Pendidikan Kewarganegaraan</option>
-                        <option>4</option>
-                        <option>5</option>
+{{--                        <option>Pilih Mata Pelajaran</option>--}}
+                        @foreach()
+{{--                        <option>{{$dailyTest->nama}}</option>--}}
+
+                        {{--                        <option>Bahasa Indonesia</option>--}}
+{{--                        <option>Ilmu Pengetahuan Sosial</option>--}}
+{{--                        <option>Pendidikan Kewarganegaraan</option>--}}
+                        @endforeach
                     </select>
+{{--                    @endforeach--}}
+
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Bab Pelajaran</label>
@@ -129,10 +135,10 @@
                     <label for="exampleFormControlInput1">Jawaban No 10</label>
                     <input type="email" class="form-control" id="exampleFormControlInput1">
                 </div>
+                <button type="submit" class="btn btn-primary">Simpan</button>
 
             </form>
 
-            <button type="button" class="btn btn-primary">Simpan</button>
         </div>
     </div>
 @endsection

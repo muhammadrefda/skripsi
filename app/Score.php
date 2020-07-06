@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Score extends Model
 {
     protected $fillable = [
-        'value'
+        'value',
+        'user_id',
+        'dailyTest_id'
     ];
 
     public function user(){

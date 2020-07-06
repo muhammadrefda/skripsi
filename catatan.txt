@@ -44,6 +44,17 @@ Brainstorming penerapan db ke mvc
 3. tentuin rest api 
 
 
+///////
+1nM = 
+-satu kelas bisa mempunyai banyak mata pelajaran
+1 = kelas
+m = mapel
+kelas = belongs to
+mapel = has Many
+kelas 7 = ipa
+kelas 7 = b.ind
+kelas 7 = b.ing
+///////
 
 
 1. dibagian siswa disuruh dia daftar dgn field

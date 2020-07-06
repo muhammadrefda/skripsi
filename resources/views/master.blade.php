@@ -40,34 +40,64 @@
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
 
-        <!-- Nav Item - Dashboard -->
-{{--        <li class="nav-item active">--}}
-{{--            <a class="nav-link" href="/">--}}
-{{--                <i class="fas fa-fw fa-tachometer-alt"></i>--}}
-{{--                <span>Dashboard</span></a>--}}
-{{--        </li>--}}
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
 
-
-    <!-- Divider -->
-        <hr class="sidebar-divider">
-
-
-        <!-- Nav Item - Tables -->
+        <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link" href="/mata-pelajaran/">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Bank Soal</span></a>
+            <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseGradeSeven" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Kelas 7</span>
+            </a>
+            <div id="collapseGradeSeven" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Kelas 7:</h6>
+                    <a class="collapse-item" href="/nilai7">Nilai</a>
+                    <a class="collapse-item" href="/mata-pelajaran7/">Bank Soal</a>
+                </div>
+            </div>
         </li>
 
+
+        <!-- Divider -->
         <hr class="sidebar-divider">
 
-
-        <!-- Nav Item - Tables -->
+        <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
-            <a class="nav-link" href="/nilai/">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Nilai</span></a>
+            <a class="nav-link collapsed"  data-toggle="collapse" data-target="#collapseGradeeight" aria-expanded="true" aria-controls="collapseGradeeight">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Kelas 8</span>
+            </a>
+            <div id="collapseGradeeight" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Kelas 8:</h6>
+                    <a class="collapse-item" href="/nilai8">Nilai</a>
+                    <a class="collapse-item" href="/mata-pelajaran8/">Bank Soal</a>
+                </div>
+            </div>
         </li>
+
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseGradeNine" aria-expanded="true" aria-controls="collapseGradeNine">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Kelas 9</span>
+            </a>
+            <div id="collapseGradeNine" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Kelas 9:</h6>
+                    <a class="collapse-item" href="/nilai9">Nilai</a>
+                    <a class="collapse-item" href="/mata-pelajaran9/">Bank Soal</a>
+                </div>
+            </div>
+        </li>
+
+
+
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">

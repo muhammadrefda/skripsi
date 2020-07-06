@@ -19,58 +19,38 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
-
-Route::get('/table', function () {
-    return view('tables');
-});
-
-
 Route::get('/login', function () {
-    return view('admin.login');
+    return view('login');
 });
-
 
 Route::get('/register', function () {
-    return view('admin.register');
+    return view('register');
 });
 
+//Route::get('soal','SoalController@index')->name('');
 
-Route::prefix('mata-pelajaran')->group(function (){
 
-    Route::get('/', function () {
-        return view('mata_pelajaran.index');
-    });
-});
+//Route::resource('bab7.soal7','ChapterTestController');
 
-Route::prefix('bab')->group(function (){
 
-    Route::get('/', function () {
-        return view('bab.index');
-    });
-});
+Route::resource('mata-pelajaran7','Kelas7\SubjectController');
+Route::resource('bab7','Kelas7\ChapterController');
+//lagi yg dibawah ini
+Route::resource('soal7','Kelas7\DailyTestController');
 
-Route::prefix('soal')->group(function () {
-    Route::get('/', function () {
-        return view('soal.index');
-    });
 
-    Route::get('/edit', function () {
-        return view('soal.edit');
-    });
 
-    Route::get('/create', function () {
-        return view('soal.create');
-    });
-});
+Route::get('/soal/tampil', 'DailyTestController@showSubject')->name('tampil');
 
-Route::prefix('nilai')->group(function (){
+Route::resource('nilai7','Kelas7\ScoreController');
 
-    Route::get('/', function () {
-        return view('nilai.index');
-    });
 
-    Route::get('/tampilkan', function () {
-        return view('nilai.show');
-    });
-});
+Route::resource('mata-pelajaran8','Kelas8\SubjectController');
+Route::resource('bab8','Kelas8\ChapterController');
+Route::resource('soal8','Kelas8\DailyTestController');
+
+
+Route::resource('mata-pelajaran9','Kelas9\SubjectController');
+Route::resource('bab9','Kelas9\ChapterController');
+Route::resource('soal9','Kelas9\DailyTestController');
 

@@ -33,17 +33,16 @@
                         </tr>
                         </thead>
                         <tbody>
-
+        @foreach($subjects as $subject)
                         <tr>
                             <td>
-                                1
-
+                                {{$subject->id}}
                             </td>
                             <td>
-                                <a href="/bab">Pendidikan Kewarganegaraan</a>
+                                <a href="/bab">{{$subject->name}}</a>
                             </td>
                         </tr>
-
+        @endforeach
                         </tbody>
                     </table>
                 </div>

@@ -9,7 +9,7 @@
 
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item active"><a href="/bank-soal">Mata Pelajaran</a></li>
+                <li class="breadcrumb-item active"><a href="/kelas-7/mata-pelajaran">Mata Pelajaran</a></li>
                 <li class="breadcrumb-item"><a href="/bab">Bab </a></li>
                 <li class="breadcrumb-item"><a href="/soal">Soal </a></li>
             </ol>
@@ -30,24 +30,12 @@
                         </tr>
                         </thead>
                         <tbody>
-
+                        @foreach($chapters as $chapter)
                         <tr>
-                            <td>1</td>
-                            <td><a href="/soal">Norma norma</a></td>
+                            <td>{{$chapter->id}}</td>
+                            <td><a href="/soal">{{$chapter->name}}</a></td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><a href="/soal">Lorem ipsum</a></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td><a href="/soal">Dolor sit amet</a></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td><a href="/soal">Kemerdekaan</a></td>
-                        </tr>
-
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

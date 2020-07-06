@@ -29,6 +29,10 @@ class User extends Authenticatable
         return $this->hasOne(Subject::class);
     }
 
+    public function grade (){
+        return $this->hasOne(Grade::class);
+    }
+
     public function score (){
         return $this->hasOne(Score::class);
     }

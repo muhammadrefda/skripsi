@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Subject extends Model
 {
     protected $fillable = [
-        'nama'
+        'name',
+        'user_id',
+        'grade_id'
     ];
 
     public function user(){
@@ -17,5 +19,9 @@ class Subject extends Model
 
     public function chapter (){
         return $this->hasMany(Chapter::class);
+    }
+
+    public function grade(){
+        return $this->hasMany(Grade::class);
     }
 }
