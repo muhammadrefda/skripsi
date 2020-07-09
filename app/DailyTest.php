@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static create($validated)
  * @method static findOrFail($dailyTest)
  * @method static where(string $string, $country_id)
+ * @method static find(int $id)
  */
 class DailyTest extends Model
 {
@@ -15,7 +16,9 @@ class DailyTest extends Model
         'question',
         'answer',
         'keyword',
-        'chapter_id'
+        'chapter_id',
+        'subject_id',
+        'grade_id',
     ];
 
     public function chapter (){
@@ -23,6 +26,14 @@ class DailyTest extends Model
     }
 
     public function score(){
-        $this->hasOne(Score::class);
+        $this->hasOne(Score::class,'score_id','id');
+    }
+
+    public function subject(){
+        return $this->belongsTo(Subject::class);
+    }
+
+    public function grade(){
+        return $this->belongsTo(Grade::class);
     }
 }

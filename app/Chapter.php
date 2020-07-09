@@ -10,8 +10,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Chapter extends Model
 {
+
+//    protected $primaryKey = 'chapter_id';
     protected $fillable = [
-        'nama',
+        'name',
         'subject_id',
         'grade_id',
     ];

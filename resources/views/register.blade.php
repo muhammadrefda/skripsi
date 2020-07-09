@@ -22,6 +22,7 @@
 
 <body class="bg-gradient-primary">
 
+
   <div class="container">
 
     <div class="card o-hidden border-0 shadow-lg my-5">
@@ -36,26 +37,30 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
               </div>
-              <form class="user">
+              <form class="user" method="post" action="{{route('register')}}">
+                  @csrf
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Nama">
+                    <input type="text" class="form-control form-control-user" name="name" placeholder="Nama">
                   </div>
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address">
+                  <input type="email" class="form-control form-control-user" name="email" placeholder="Email Address">
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                    <input type="password" class="form-control form-control-user" name="password" placeholder="Password">
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password">
+                    <input type="password" class="form-control form-control-user" name="password_confirmation" placeholder="Repeat Password">
                   </div>
                 </div>
-                <a href="/login" class="btn btn-primary btn-user btn-block">
-                  Register Account
-                </a>
+{{--                <a href="/login" class="btn btn-primary btn-user btn-block">--}}
+{{--                  Register Account--}}
+{{--                </a>--}}
+                  <button class="btn btn-primary btn-user btn-block" type="submit">
+register
+                  </button>
               </form>
             </div>
           </div>

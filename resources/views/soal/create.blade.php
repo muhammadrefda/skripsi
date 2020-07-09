@@ -27,7 +27,7 @@
                         @foreach()
 {{--                        <option>{{$dailyTest->nama}}</option>--}}
 
-                        {{--                        <option>Bahasa Indonesia</option>--}}
+                        {{--                        <option>BahasaIndonesia</option>--}}
 {{--                        <option>Ilmu Pengetahuan Sosial</option>--}}
 {{--                        <option>Pendidikan Kewarganegaraan</option>--}}
                         @endforeach

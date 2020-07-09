@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @method static findOrFail($id)
+ */
 class Subject extends Model
 {
     protected $fillable = [
@@ -23,5 +26,9 @@ class Subject extends Model
 
     public function grade(){
         return $this->hasMany(Grade::class);
+    }
+
+    public function dailyTest (){
+        return $this->hasMany(DailyTest::class);
     }
 }

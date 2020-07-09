@@ -52,7 +52,6 @@
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="/forgot-password">Forgot Password?</a>
                   </div>
                   <div class="text-center">
                     <a class="small" href="/register">Create an Account!</a>

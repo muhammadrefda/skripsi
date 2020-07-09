@@ -8,8 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Dashboard</title>
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -22,9 +29,13 @@
     <!-- Custom styles for this page -->
     <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 
+
+
 </head>
 
 <body id="page-top">
+
+
 
 <!-- Page Wrapper -->
 <div id="wrapper">
@@ -52,7 +63,7 @@
             <div id="collapseGradeSeven" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Kelas 7:</h6>
-                    <a class="collapse-item" href="/nilai7">Nilai</a>
+{{--                    <a class="collapse-item" href="/nilai7">Nilai</a>--}}
                     <a class="collapse-item" href="/mata-pelajaran7/">Bank Soal</a>
                 </div>
             </div>
@@ -71,7 +82,7 @@
             <div id="collapseGradeeight" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Kelas 8:</h6>
-                    <a class="collapse-item" href="/nilai8">Nilai</a>
+{{--                    <a class="collapse-item" href="/nilai8">Nilai</a>--}}
                     <a class="collapse-item" href="/mata-pelajaran8/">Bank Soal</a>
                 </div>
             </div>
@@ -90,7 +101,7 @@
             <div id="collapseGradeNine" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Kelas 9:</h6>
-                    <a class="collapse-item" href="/nilai9">Nilai</a>
+{{--                    <a class="collapse-item" href="/nilai9">Nilai</a>--}}
                     <a class="collapse-item" href="/mata-pelajaran9/">Bank Soal</a>
                 </div>
             </div>
@@ -149,10 +160,21 @@
 
 
                     <!-- Nav Item - User Information -->
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                        </a>
+{{--                    <li class="nav-item dropdown no-arrow">--}}
+
+
+
+                    <li class="nav-item dropdown">
+
+                    </li>
+
+
+
+
+
+                {{--                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>--}}
+{{--                        </a>--}}
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                             {{--                <a class="dropdown-item" href="#">--}}
@@ -164,7 +186,7 @@
                                 Logout
                             </a>
                         </div>
-                    </li>
+{{--                    </li>--}}
 
                 </ul>
 
@@ -198,23 +220,23 @@
 </a>
 
 <!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
-            </div>
-        </div>
-    </div>
-</div>
+{{--<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">--}}
+{{--    <div class="modal-dialog" role="document">--}}
+{{--        <div class="modal-content">--}}
+{{--            <div class="modal-header">--}}
+{{--                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>--}}
+{{--                <button class="close" type="button" data-dismiss="modal" aria-label="Close">--}}
+{{--                    <span aria-hidden="true">×</span>--}}
+{{--                </button>--}}
+{{--            </div>--}}
+{{--            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>--}}
+{{--            <div class="modal-footer">--}}
+{{--                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>--}}
+{{--                <a class="btn btn-primary" href="login.html">Logout</a>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
 
 <!-- Bootstrap core JavaScript-->
 <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
