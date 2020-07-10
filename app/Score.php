@@ -18,7 +18,10 @@ class Score extends Model
     }
     public function dailyTest(){
         return $this->belongsTo(DailyTest::class);
+    }
 
+    public function answerStudent(){
+        return $this->hasMany(AnswerStudent::class);
     }
 
 }

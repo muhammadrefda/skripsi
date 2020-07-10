@@ -38,4 +38,6 @@ Route::get('chapter/prakarya/bab', 'APIChapterController@showPrakaryaBab');
 Route::get('chapter/pai/bab', 'APIChapterController@showPaiBab');
 Route::get('chapter/senibudaya/bab', 'APIChapterController@showSeniBudayaBab');
 
+//contoh
+Route::get('pertanyaan/ips/7/{id}','QuestionStudentController@index');
 

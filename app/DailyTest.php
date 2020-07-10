@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @method static create($validated)
  * @method static findOrFail($dailyTest)
- * @method static where(string $string, $country_id)
+ * @method static where(string $string)
  * @method static find(int $id)
+ * @method daily_tests()
  */
 class DailyTest extends Model
 {
@@ -26,7 +27,11 @@ class DailyTest extends Model
     }
 
     public function score(){
-        $this->hasOne(Score::class,'score_id','id');
+        $this->hasOne(Score::class);
+    }
+
+    public function answerStudent(){
+        $this->hasMany(AnswerStudent::class);
     }
 
     public function subject(){
