@@ -22,7 +22,7 @@ class AuthController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'grade' =>$request->grade,
-            'attendance_number' => $request->attendance_number
+//            'attendance_number' => $request->attendance_number
 
         ]);
 

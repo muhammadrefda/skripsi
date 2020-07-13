@@ -18,10 +18,10 @@ class CreateSubjectsTable extends Migration
             $table->string('name');
             $table->timestamps();
 
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('grade_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('grade_id')->references('id')->on('grades');
+//            $table->unsignedBigInteger('user_id');
+//            $table->unsignedBigInteger('grade_id');
+//            $table->foreign('user_id')->references('id')->on('users');
+//            $table->foreign('grade_id')->references('id')->on('grades');
 
 
         });

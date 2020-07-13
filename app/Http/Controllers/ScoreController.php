@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\AnswerStudent;
+use App\Score;
 use Illuminate\Http\Request;
 
 class ScoreController extends Controller
@@ -80,5 +82,15 @@ class ScoreController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function student_score(Request $request){
+
+        $user = Score::create([
+            'value' => $request->value,
+        ]);
+
+        return response()->json($user);
+
     }
 }

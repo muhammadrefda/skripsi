@@ -57,4 +57,23 @@ class AnswerStudentController extends Controller
             ->get();
         return response()->json(['data' => $chapters], 200);
     }
+
+    public function student_answer(Request $request)
+    {
+//        $request->validate([
+//            'name' => 'required',
+//            'email' => 'required|email',
+//            'password' => 'required'
+//        ]);
+
+        $user = AnswerStudent::create([
+            'answerStudentColumn' => $request->answerStudentColumn,
+            'nilaiSiswa' => $request->nilaiSiswa,
+        ]);
+
+        return response()->json($user);
+    }
+
+
+
 }

@@ -19,13 +19,13 @@ class Penjaskes7Controller extends Controller
      */
     public function index()
     {
-        $chapters = Chapter::where([["subject_id", "=", 1], ["grade_id", "=", 1]])->get();
+        $chapters = Chapter::where([["subject_id", "=", 6], ["grade_id", "=", 1]])->get();
 
         return view('kelas7.Penjaskes.index',compact('chapters'));
     }
 
     public function showBab(){
-        $chapters = Chapter::where([["subject_id", "=", 1], ["grade_id", "=", 1]])->get();
+        $chapters = Chapter::where([["subject_id", "=", 6], ["grade_id", "=", 1]])->get();
         return view('kelas7.Penjaskes.soal',compact('chapters'));
 
     }
@@ -38,7 +38,7 @@ class Penjaskes7Controller extends Controller
     public function create()
     {
 
-        $chapters = Chapter::where([["subject_id", "=", 1], ["grade_id", "=", 1]])->get();
+        $chapters = Chapter::where([["subject_id", "=", 6], ["grade_id", "=", 1]])->get();
         $grades = Grade::all();
         $subjects = Subject::all();
         $data = array(
@@ -83,9 +83,9 @@ class Penjaskes7Controller extends Controller
      */
     public function show()
     {
-        $bab = Chapter::where([["subject_id", "=", 1], ["grade_id", "=", 1]])->get();
+        $bab = Chapter::where([["subject_id", "=", 6], ["grade_id", "=", 1]])->get();
 
-        $dailyTests = DailyTest::where([["subject_id", "=", 1], ["grade_id", "=", 1]])->get();
+        $dailyTests = DailyTest::where([["subject_id", "=", 6], ["grade_id", "=", 1]])->get();
         return view('kelas7.Penjaskes.show',compact('dailyTests','bab'));
     }
 
@@ -99,7 +99,7 @@ class Penjaskes7Controller extends Controller
     {
 //        $dailyTests = DailyTest::find($id);
 //        $categories = Category::all();
-        $dailyTests = DailyTest::where([["subject_id", "=", 1], ["grade_id", "=", 1]])->get();
+        $dailyTests = DailyTest::where([["subject_id", "=", 6], ["grade_id", "=", 1]])->get();
 
         return view('kelas7.Penjaskes.edit', compact('dailyTests'));
     }

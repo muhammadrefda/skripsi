@@ -19,12 +19,12 @@ class CreateScoresTable extends Migration
             $table->timestamps();
 
 
-            $table->unsignedBigInteger('dailyTest_id');
-            $table->foreign('dailyTest_id')->references('id')->on('daily_tests');
-
-
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+//            $table->unsignedBigInteger('dailyTest_id');
+//            $table->foreign('dailyTest_id')->references('id')->on('daily_tests');
+//
+//
+//            $table->unsignedBigInteger('user_id');
+//            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

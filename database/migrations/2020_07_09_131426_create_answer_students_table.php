@@ -16,14 +16,15 @@ class CreateAnswerStudentsTable extends Migration
         Schema::create('answer_students', function (Blueprint $table) {
             $table->id();
             $table->string('answerStudentColumn')->nulable();
+            $table->string('nilaiSiswa')->nulable();
             $table->timestamps();
 
 
-            $table->unsignedBigInteger('dailyTest_id');
-            $table->unsignedBigInteger('score_id');
+//            $table->unsignedBigInteger('dailyTest_id');
+//            $table->unsignedBigInteger('score_id');
 
-            $table->foreign('dailyTest_id')->references('id')->on('daily_tests');
-            $table->foreign('score_id')->references('id')->on('scores');
+//            $table->foreign('dailyTest_id')->references('id')->on('daily_tests');
+//            $table->foreign('score_id')->references('id')->on('scores');
 
 
         });

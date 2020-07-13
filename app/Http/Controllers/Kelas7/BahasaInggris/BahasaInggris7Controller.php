@@ -17,7 +17,7 @@ class BahasaInggris7Controller extends Controller
     public function index()
     {
 
-        $chapters = Chapter::where([["subject_id", "=", 7], ["grade_id", "=", 1]])->get();
+        $chapters = Chapter::where([["subject_id", "=", 2], ["grade_id", "=", 1]])->get();
         return view('kelas7.BahasaInggris.index',compact('chapters'));
 
 

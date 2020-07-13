@@ -21,10 +21,10 @@ class APIDailyTestController extends Controller
     {
 
         $chapters = DailyTest::create([
-            'question' => $request->question,
+//            'question' => $request->question,
             //'answer_teacher' =>$answ, //Tampil aja, ga perlu diisi
             'answer_student' =>$request->answer, //Buat isian siswa
-            'keyword' =>$request->keyword,
+//            'keyword' =>$request->keyword,
             'chapter_id'=>$request->chapter_id,
             'subject_id'=>$request->subject_id,
             'grade_id',

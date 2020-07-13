@@ -14,17 +14,18 @@ class AnswerStudent extends Model
     public $fillable = [
 
         'answerStudentColumn',
-        'dailyTest_id',
-        'score_id',
+        'nilaiSiswa',
+//        'dailyTest_id',
+//        'score_id',
     ];
 
-    public function dailyTest()
-    {
-        return $this->belongsTo(DailyTest::class);
-    }
+//    public function dailyTest()
+//    {
+//        return $this->belongsTo(DailyTest::class);
+//    }
 
-    public function score()
-    {
-        return $this->belongsTo(Score::class);
-    }
+//    public function score()
+//    {
+//        return $this->belongsTo(Score::class);
+//    }
 }

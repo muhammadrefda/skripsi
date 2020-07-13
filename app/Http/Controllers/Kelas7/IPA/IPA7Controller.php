@@ -16,7 +16,7 @@ class IPA7Controller extends Controller
      */
     public function index()
     {
-        $chapters = Chapter::where([["subject_id", "=", 2], ["grade_id", "=", 1]])->get();
+        $chapters = Chapter::where([["subject_id", "=", 4], ["grade_id", "=", 1]])->get();
         return view('kelas7.IPA.index',compact('chapters'));
 
 

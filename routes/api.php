@@ -25,8 +25,11 @@ Route::resource('subject', 'APISubjectController');
 
 // display Bab mapel kelas 7
 Route::get('chapter/ips/bab', 'APIChapterController@showIpsBab');
+
 Route::get('soal/ips','APIDailyTestController@showIpsSoal');
+
 Route::post('soal/ips/mulai','APIDailyTestController@mulaiTestIps');
+
 Route::get('tampil/question/ips','APIDailyTestController@tampilPertanyaanIps');
 
 Route::get('chapter/bind/bab', 'APIChapterController@showBindBab');
@@ -39,7 +42,10 @@ Route::get('chapter/pai/bab', 'APIChapterController@showPaiBab');
 Route::get('chapter/senibudaya/bab', 'APIChapterController@showSeniBudayaBab');
 
 //contoh
-Route::get('pertanyaan/ips/7/{id}','QuestionStudentController@index');
+Route::get('pertanyaan/ips/7','QuestionStudentController@index');
 
 Route::resource('tampilin-jawaban','AnswerStudentController');
 
+Route::post('jawaban/siswa','AnswerStudentController@student_answer');
+
+Route::post('nilai/siswa','ScoreController@student_score');
