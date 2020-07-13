@@ -24,10 +24,8 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <a class="btn btn-outline-warning text-success" href="{{route('kelas7.penjas.create')}}">Tambah Soal</a>
                         <hr>
-
                         <thead>
                         <tr>
-{{--                            <th>id</th>--}}
                             <th>soal </th>
                             <th>jawaban</th>
                             <th>kata kunci</th>
@@ -35,36 +33,23 @@
                         </tr>
                         </thead>
                         <tbody>
-{{--                        @foreach($dailyTests as $dailyTest)--}}
-{{--                            <td>{{ $loop->iteration }}</td>--}}
-{{--                        @endforeach--}}
-
                         @foreach($dailyTests as $dailyTest)
-{{--                                <td>{{$dailyTest->id}}</td>--}}
-
-{{--                                <td>{{$dailyTest->chapter_id}}</td>--}}
                                 <td>{{$dailyTest->question}}</td>
-                                <td>{{$dailyTest->answer}}</td>
+                                <td>{{$dailyTest->answer_teacher}}</td>
                                 <td>{{$dailyTest->keyword}}</td>
                                 <td>
 
                                     <form action="{{route('kelas7.penjas.soal.hapus',$dailyTest->id)}}" method="POST" onsubmit="return confirm('Yakin menghapus soal ini?')">
                                         @csrf
-{{--                                        @method('DELETE')--}}
                                         <input type="hidden" name="_method" value="DELETE"/>
-{{--                                        <input type="submit" class="btn-danger" value="Delete">--}}
                                         <button class="btn btn-outline-danger" type="submit">Hapus</button>
                                     </form>
                                 </td>
-
                         </tbody>
                         @endforeach
-
                     </table>
                 </div>
             </div>
         </div>
-
     </div>
-    <!-- /.container-fluid -->
 @endsection

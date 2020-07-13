@@ -48,6 +48,7 @@ class Penjaskes7Controller extends Controller
         );
 
         return view('kelas7.Penjaskes.create', $data);
+
     }
 
     /**
@@ -66,13 +67,14 @@ class Penjaskes7Controller extends Controller
         $new_test->subject_id = $request->get('subject_id');
         $new_test->grade_id = $request->get('grade_id');
         $new_test->question = $request->get('question');
-        $new_test->answer = $request->get('answer');
+        $new_test->answer_teacher = $request->get('answer_teacher');
         $new_test->keyword = $request->get('keyword');
 
         $new_test->save();
 
         return redirect()->route('kelas7.penjas.create')
             ->with('success',' created successfully.');
+
     }
 
     /**
@@ -87,42 +89,7 @@ class Penjaskes7Controller extends Controller
 
         $dailyTests = DailyTest::where([["subject_id", "=", 6], ["grade_id", "=", 1]])->get();
         return view('kelas7.Penjaskes.show',compact('dailyTests','bab'));
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
-     */
-    public function edit()
-    {
-//        $dailyTests = DailyTest::find($id);
-//        $categories = Category::all();
-        $dailyTests = DailyTest::where([["subject_id", "=", 6], ["grade_id", "=", 1]])->get();
-
-        return view('kelas7.Penjaskes.edit', compact('dailyTests'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-
-//        $request->validate([
-//            'name' => 'required',
-//            'detail' => 'required',
-//        ]);
-//
-//        $product->update($request->all());
-//
-//        return redirect()->route('products.index')
-//            ->with('success','Product updated successfully');
     }
 
     /**
@@ -136,7 +103,7 @@ class Penjaskes7Controller extends Controller
         $dailyTest = DailyTest::findOrFail($id);
 
         $dailyTest->forceDelete();
-        return redirect()->route('kelas7.penjas.soal')->with('success delete soal');
+        return redirect()->route('kelas7.penjas.soal.tampil')->with('success delete soal');
 
     }
 }

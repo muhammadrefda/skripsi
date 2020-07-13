@@ -9,7 +9,7 @@ $factory->define(\App\DailyTest::class, function (Faker $faker) {
     return [
         'question' => $faker->word,
         'answer_teacher' => $faker->paragraph,
-        'answer_student' => $faker->paragraph,
+        //'answer_student' => $faker->paragraph,
         'keyword' => $faker->word,
         'grade_id' => \App\Grade::all()->random()->id,
         'subject_id' => \App\Subject::all()->random()->id,

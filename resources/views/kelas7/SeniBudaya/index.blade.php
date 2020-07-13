@@ -7,7 +7,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item "><a href="/mata-pelajaran7">Mata Pelajaran</a></li>
-                <li class="breadcrumb-item active"><a href="/bab7">Bab </a></li>
+                <li class="breadcrumb-item active"><a href="{{route('kelas7.senibudaya')}}">Bab </a></li>
                 <li class="breadcrumb-item"><a href="/soal7">Soal </a></li>
             </ol>
         </nav>
@@ -28,7 +28,7 @@
                         <tbody>
                         @foreach($chapters as $chapter)
                             <tr>
-                                <td><a href="/kelas7/pai/soal">{{$chapter->name}}</a></td>
+                                <td><a href="{{route('kelas7.senibudaya.soal')}}">{{$chapter->name}}</a></td>
                             </tr>
                         @endforeach
                         </tbody>

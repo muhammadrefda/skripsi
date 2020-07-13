@@ -1,21 +1,15 @@
 @extends('master')
-
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
-
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item "><a href="">Mata Pelajaran</a></li>
-                <li class="breadcrumb-item active"><a href="{{route('kelas7.ips')}}">Bab </a></li>
+                <li class="breadcrumb-item "><a href="{{route('mata-pelajaran7.index')}}">Mata Pelajaran</a></li>
+                <li class="breadcrumb-item active"><a href="{{route('kelas7.penjas')}}">Bab </a></li>
                 <li class="breadcrumb-item"><a href="">Soal </a></li>
             </ol>
         </nav>
-
-
     </div>
-    <!-- /.container-fluid -->
-
     <!-- Approach -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -53,7 +47,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Jawaban </label>
-                    <input type="text" class="form-control" name="answer">
+                    <input type="text" class="form-control" name="answer_teacher">
                 </div>
                 <div class="form-group">
                     <label for="">Kata Kunci Jawaban </label>
@@ -61,7 +55,6 @@
                 </div>
                 <input type="submit" name="submit" class="btn btn-outline-primary" value="simpan">
             </form>
-
         </div>
     </div>
 @endsection

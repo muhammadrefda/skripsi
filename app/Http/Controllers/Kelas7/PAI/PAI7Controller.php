@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Kelas7\PAI;
 
 use App\Chapter;
+use App\DailyTest;
+use App\Grade;
 use App\Http\Controllers\Controller;
+use App\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,7 +19,7 @@ class PAI7Controller extends Controller
      */
     public function index()
     {
-        $chapters = Chapter::where([["subject_id", "=", 4], ["grade_id", "=", 1]])->get();
+        $chapters = Chapter::where([["subject_id", "=", 5], ["grade_id", "=", 1]])->get();
         return view('kelas7.PAI.index',compact('chapters'));
 
     }
@@ -28,7 +31,17 @@ class PAI7Controller extends Controller
      */
     public function create()
     {
-        //
+        $chapters = Chapter::where([["subject_id", "=", 5], ["grade_id", "=", 1]])->get();
+        $grades = Grade::all();
+        $subjects = Subject::all();
+        $data = array(
+            'chapters'  => $chapters,
+            'grades' => $grades,
+            'subjects' => $subjects,
+        );
+
+        return view('kelas7.PAI.create', $data);
+
     }
 
     /**
@@ -39,7 +52,19 @@ class PAI7Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $new_test = new DailyTest;
+
+        $new_test->chapter_id = $request->get('chapter_id');
+        $new_test->subject_id = $request->get('subject_id');
+        $new_test->grade_id = $request->get('grade_id');
+        $new_test->question = $request->get('question');
+        $new_test->answer_teacher = $request->get('answer_teacher');
+        $new_test->keyword = $request->get('keyword');
+
+        $new_test->save();
+
+        return redirect()->route('kelas7.pai.create')
+            ->with('success',' created successfully.');
     }
 
     /**
@@ -48,9 +73,13 @@ class PAI7Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $bab = Chapter::where([["subject_id", "=", 5], ["grade_id", "=", 1]])->get();
+
+        $dailyTests = DailyTest::where([["subject_id", "=", 5], ["grade_id", "=", 1]])->get();
+        return view('kelas7.PAI.show',compact('dailyTests','bab'));
+
     }
 
     /**
@@ -84,6 +113,10 @@ class PAI7Controller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dailyTest = DailyTest::findOrFail($id);
+
+        $dailyTest->forceDelete();
+        return redirect()->route('kelas7.pai.soal.tampil')->with('success delete soal');
+
     }
 }

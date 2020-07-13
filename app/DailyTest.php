@@ -16,7 +16,6 @@ class DailyTest extends Model
     protected $fillable = [
         'question',
         'answer_teacher',
-        'answer_student',
         'keyword',
         'chapter_id',
         'subject_id',

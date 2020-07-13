@@ -50,11 +50,11 @@
                         </tr>
                         <tr>
                             <td>6</td>
-                            <td><a href="{{route('kelas7.bahasaindonesia')}}">Bahasa Indonesia</a></td>
+                            <td><a href="{{route('kelas7.bind')}}">Bahasa Indonesia</a></td>
                         </tr>
                         <tr>
                             <td>7</td>
-                            <td><a href="{{route('kelas7.bahasainggris')}}">Bahasa Inggris</a></td>
+                            <td><a href="{{route('kelas7.bing')}}">Bahasa Inggris</a></td>
                         </tr>
                         <tr>
                             <td>8</td>

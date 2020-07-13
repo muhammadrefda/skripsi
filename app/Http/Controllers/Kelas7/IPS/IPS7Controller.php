@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Kelas7\IPS;
 
 use App\Chapter;
+use App\DailyTest;
+use App\Grade;
 use App\Http\Controllers\Controller;
+use App\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -22,6 +25,12 @@ class IPS7Controller extends Controller
 
     }
 
+    public function showBab(){
+        $chapters = Chapter::where([["subject_id", "=", 1], ["grade_id", "=", 1]])->get();
+        return view('kelas7.IPS.soal',compact('chapters'));
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -29,7 +38,17 @@ class IPS7Controller extends Controller
      */
     public function create()
     {
-        //
+        $chapters = Chapter::where([["subject_id", "=", 1], ["grade_id", "=", 1]])->get();
+        $grades = Grade::all();
+        $subjects = Subject::all();
+        $data = array(
+            'chapters'  => $chapters,
+            'grades' => $grades,
+            'subjects' => $subjects,
+        );
+
+        return view('kelas7.IPS.create', $data);
+
     }
 
     /**
@@ -40,7 +59,20 @@ class IPS7Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $new_test = new DailyTest;
+
+        $new_test->chapter_id = $request->get('chapter_id');
+        $new_test->subject_id = $request->get('subject_id');
+        $new_test->grade_id = $request->get('grade_id');
+        $new_test->question = $request->get('question');
+        $new_test->answer_teacher = $request->get('answer_teacher');
+        $new_test->keyword = $request->get('keyword');
+
+        $new_test->save();
+
+        return redirect()->route('kelas7.ips.create')
+            ->with('success',' created successfully.');
+
     }
 
     /**
@@ -49,9 +81,13 @@ class IPS7Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $bab = Chapter::where([["subject_id", "=", 1], ["grade_id", "=", 1]])->get();
+
+        $dailyTests = DailyTest::where([["subject_id", "=", 1], ["grade_id", "=", 1]])->get();
+        return view('kelas7.IPS.show',compact('dailyTests','bab'));
+
     }
 
     /**
@@ -85,6 +121,10 @@ class IPS7Controller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dailyTest = DailyTest::findOrFail($id);
+
+        $dailyTest->forceDelete();
+        return redirect()->route('kelas7.ips.soal.tampil')->with('success delete soal');
+
     }
 }

@@ -17,8 +17,6 @@ class CreateDailyTestsTable extends Migration
             $table->id();
             $table->string('question')->nullable();
             $table->text('answer_teacher')->nullable();
-            $table->text('answer_student')->nullable();
-
             $table->string('keyword')->nullable();
             $table->timestamps();
 

@@ -31,21 +31,48 @@
                         </tr>
                         </thead>
                         <tbody>
-        @foreach($subjects as $subject)
                         <tr>
-                            <td>
-                                {{$subject->id}}
-                            </td>
-                            <td>
-                                <a href="/kelas-8/bab">{{$subject->name}}</a>
-                            </td>
+                            <td>1</td>
+                            <td><a href="{{route('kelas8.penjas')}}">penjaskes</a></td>
                         </tr>
-        @endforeach
+                        <tr>
+                            <td>2</td>
+                            <td><a href="{{route('kelas8.ipa')}}">Ilmu Pengetahuan Alam</a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><a href="{{route('kelas8.ips')}}">Ilmu Pengetahuan Sosial</a></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><a href="{{route('kelas8.pai')}}">Pendidikan Agama Islam</a></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><a href="{{route('kelas8.senibudaya')}}">Seni Budaya</a></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><a href="{{route('kelas8.bind')}}">Bahasa Indonesia</a></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td><a href="{{route('kelas8.bing')}}">Bahasa Inggris</a></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td><a href="{{route('kelas8.prakarya')}}">Prakarya</a></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td><a href="{{route('kelas8.pkn')}}">Pendidikan Kewarganegaraan</a></td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
+
 
     </div>
     <!-- /.container-fluid -->

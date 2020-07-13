@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Kelas7\IPA;
 
 use App\Chapter;
+use App\DailyTest;
+use App\Grade;
 use App\Http\Controllers\Controller;
+use App\Subject;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -23,8 +26,8 @@ class IPA7Controller extends Controller
     }
 
     public function showBab(){
-        $chapters = Chapter::where([["subject_id", "=", 2], ["grade_id", "=", 1]])->get();
-        return view('kelas7.soal.index',compact('chapters'));
+        $chapters = Chapter::where([["subject_id", "=", 4], ["grade_id", "=", 1]])->get();
+        return view('kelas7.IPA.soal',compact('chapters'));
 
     }
 
@@ -36,7 +39,16 @@ class IPA7Controller extends Controller
      */
     public function create()
     {
-        //
+        $chapters = Chapter::where([["subject_id", "=", 4], ["grade_id", "=", 1]])->get();
+        $grades = Grade::all();
+        $subjects = Subject::all();
+        $data = array(
+            'chapters'  => $chapters,
+            'grades' => $grades,
+            'subjects' => $subjects,
+        );
+
+        return view('kelas7.IPA.create', $data);
     }
 
     /**
@@ -47,41 +59,34 @@ class IPA7Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $new_test = new DailyTest;
+
+        $new_test->chapter_id = $request->get('chapter_id');
+        $new_test->subject_id = $request->get('subject_id');
+        $new_test->grade_id = $request->get('grade_id');
+        $new_test->question = $request->get('question');
+        $new_test->answer_teacher = $request->get('answer_teacher');
+        $new_test->keyword = $request->get('keyword');
+
+        $new_test->save();
+
+        return redirect()->route('kelas7.ipa.create')
+            ->with('success',' created successfully.');
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function show($id)
+    public function show()
     {
-        //
-    }
+        $bab = Chapter::where([["subject_id", "=", 4], ["grade_id", "=", 1]])->get();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        $dailyTests = DailyTest::where([["subject_id", "=", 4], ["grade_id", "=", 1]])->get();
+        return view('kelas7.IPA.show',compact('dailyTests','bab'));
     }
 
     /**
@@ -92,6 +97,10 @@ class IPA7Controller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dailyTest = DailyTest::findOrFail($id);
+
+        $dailyTest->forceDelete();
+        return redirect()->route('kelas7.ipa.soal.tampil')->with('success delete soal');
+
     }
 }
