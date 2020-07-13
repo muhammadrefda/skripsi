@@ -22,7 +22,8 @@ class APIDailyTestController extends Controller
 
         $chapters = DailyTest::create([
             'question' => $request->question,
-            'answer' =>$request->answer,
+            //'answer_teacher' =>$answ, //Tampil aja, ga perlu diisi
+            'answer_student' =>$request->answer, //Buat isian siswa
             'keyword' =>$request->keyword,
             'chapter_id'=>$request->chapter_id,
             'subject_id'=>$request->subject_id,
@@ -45,10 +46,6 @@ class APIDailyTestController extends Controller
             ->where('grades.id','=',1)
             ->where('subjects.id','=',1)
             ->where('chapters.id','=',1)
-
-//                        ->where('daily_tests.grade_id','=',1)
-//            ->where('daily_tests.subject_id','=',1)
-//            ->where('daily_tests.chapter_id','=',1)
             ->get();
         return response()->json(['data' => $chapters], 200);
     }

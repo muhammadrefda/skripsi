@@ -41,3 +41,5 @@ Route::get('chapter/senibudaya/bab', 'APIChapterController@showSeniBudayaBab');
 //contoh
 Route::get('pertanyaan/ips/7/{id}','QuestionStudentController@index');
 
+Route::resource('tampilin-jawaban','AnswerStudentController');
+

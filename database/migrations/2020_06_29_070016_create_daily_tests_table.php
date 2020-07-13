@@ -16,7 +16,9 @@ class CreateDailyTestsTable extends Migration
         Schema::create('daily_tests', function (Blueprint $table) {
             $table->id();
             $table->string('question')->nullable();
-            $table->text('answer')->nullable();
+            $table->text('answer_teacher')->nullable();
+            $table->text('answer_student')->nullable();
+
             $table->string('keyword')->nullable();
             $table->timestamps();
 
