@@ -11,7 +11,6 @@
                 <li class="breadcrumb-item"><a href="">Soal </a></li>
             </ol>
         </nav>
-
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">

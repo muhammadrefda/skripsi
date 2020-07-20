@@ -12,6 +12,42 @@ use Illuminate\Support\Facades\DB;
 
 class IPA9Controller extends Controller
 {
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param $dailyTest
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
+     */
+    public function edit($id)
+    {
+        $dailyTest = DailyTest::findOrFail($id);
+
+        return view('kelas9.IPA.edit', ['dailyTest' => $dailyTest]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $dailyTest = DailyTest::findOrFail($id);
+
+        $dailyTest->question = $request->get('question');
+        $dailyTest->answer_teacher = $request->get('answer_teacher');
+        $dailyTest->keyword = $request->get('keyword');
+
+        $dailyTest->save();
+
+        return redirect()
+            ->route('kelas9.ipa.soal.tampil')
+            ->with('status','Great! Updated successfully');
+    }
+
     /**
      * Display a listing of the resource.
      *

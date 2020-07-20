@@ -4,8 +4,8 @@
     <div class="container-fluid">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item "><a href="{{route('mata-pelajaran7.index')}}">Mata Pelajaran</a></li>
-                <li class="breadcrumb-item active"><a href="{{route('kelas7.penjas')}}">Bab </a></li>
+                <li class="breadcrumb-item active"><a href="{{route('mata-pelajaran7.index')}}">Mata Pelajaran</a></li>
+                <li class="breadcrumb-item"><a href="{{route('kelas7.penjas')}}">Bab </a></li>
                 <li class="breadcrumb-item"><a href="">Soal </a></li>
             </ol>
         </nav>
@@ -34,7 +34,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>mapel</label>
+                    <label>Mata Pelajaran</label>
                     <select class="form-control" name="subject_id">
                         @foreach($subjects as $grade)
                             <option value="{{$grade->id}}">{{$grade->name}}</option>

@@ -8,7 +8,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active"><a href="/mata-pelajaran8/">Mata Pelajaran</a></li>
-                <li class="breadcrumb-item"><a href="{{route('kelas8.prakarya.soal')}}">Bab </a></li>
+                <li class="breadcrumb-item"><a href="{{route('kelas8.prakarya')}}">Bab </a></li>
                 <li class="breadcrumb-item"><a href="">Soal </a></li>
             </ol>
         </nav>
@@ -26,14 +26,16 @@
                         <hr>
                         <thead>
                         <tr>
+                            <th>nomor</th>
                             <th>soal </th>
                             <th>jawaban</th>
                             <th>kata kunci</th>
-                            <th>aksi</th>
+                            <td colspan="2">aksi</td>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($dailyTests as $dailyTest)
+                            <td>{{$loop->iteration}}</td>
                                 <td>{{$dailyTest->question}}</td>
                                 <td>{{$dailyTest->answer_teacher}}</td>
                                 <td>{{$dailyTest->keyword}}</td>
@@ -44,6 +46,9 @@
                                         <button class="btn btn-outline-danger" type="submit">Hapus</button>
                                     </form>
                                 </td>
+                            <td>
+                                <a href="{{route('kelas8.prakarya.soal.ubah',$dailyTest->id)}} " class="btn btn-warning">Ubah</a>
+                            </td>
                         </tbody>
                         @endforeach
                     </table>

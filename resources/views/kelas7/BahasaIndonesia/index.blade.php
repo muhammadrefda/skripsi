@@ -23,12 +23,14 @@
                         <thead>
                         <tr>
                             <th>Nama </th>
+                            <th>Aksi</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($chapters as $chapter)
                             <tr>
-                                <td><a href="/kelas7/BahasaIndonesia/soal">{{$chapter->name}}</a></td>
+                                <td><a href="{{route('kelas7.bind.soal')}}">{{$chapter->name}}</a></td>
+                                <td><a class="btn btn-outline-primary" href="{{route('kelas7.bind.soal.tampil')}}">Lihat</a></td>
                             </tr>
                         @endforeach
                         </tbody>

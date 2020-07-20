@@ -93,14 +93,50 @@ class IPA8Controller extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function destroy($id)
     {
         $dailyTest = DailyTest::findOrFail($id);
 
         $dailyTest->forceDelete();
+
         return redirect()->route('kelas8.ipa.soal.tampil')->with('success delete soal');
 
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param $dailyTest
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
+     */
+    public function edit($id)
+    {
+        $dailyTest = DailyTest::findOrFail($id);
+
+        return view('kelas8.ipa.edit', ['dailyTest' => $dailyTest]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $dailyTest = DailyTest::findOrFail($id);
+
+        $dailyTest->question = $request->get('question');
+        $dailyTest->answer_teacher = $request->get('answer_teacher');
+        $dailyTest->keyword = $request->get('keyword');
+
+        $dailyTest->save();
+
+        return redirect()
+            ->route('kelas8.ips.soal.tampil')
+            ->with('status','Great! Updated successfully');
     }
 }

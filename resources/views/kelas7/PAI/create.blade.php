@@ -1,9 +1,7 @@
 @extends('master')
-
 @section('content')
     <!-- Begin Page Content -->
     <div class="container-fluid">
-
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item "><a href="{{route('mata-pelajaran7.index')}}">Mata Pelajaran</a></li>
@@ -11,11 +9,7 @@
                 <li class="breadcrumb-item"><a href="">Soal </a></li>
             </ol>
         </nav>
-
-
     </div>
-    <!-- /.container-fluid -->
-
     <!-- Approach -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">

@@ -12,7 +12,6 @@ class APISubjectController extends Controller
     public function show($id)
     {
         $subjects = Subject::findOrFail($id);
-//        $grades = Grade::all($id);
 
         return response()->json(['data' => $subjects], 200);
 

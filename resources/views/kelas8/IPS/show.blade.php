@@ -25,15 +25,16 @@
                         <a class="btn btn-outline-warning text-success" href="{{route('kelas8.ips.create')}}">Tambah Soal</a>
                         <hr>
                         <thead>
-                        <tr>
+                        <tr><th>nomor</th>
                             <th>soal </th>
                             <th>jawaban</th>
                             <th>kata kunci</th>
-                            <th>aksi</th>
+                            <td colspan="2">Aksi</td>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($dailyTests as $dailyTest)
+                            <td>{{$loop->iteration}}</td>
                                 <td>{{$dailyTest->question}}</td>
                                 <td>{{$dailyTest->answer_teacher}}</td>
                                 <td>{{$dailyTest->keyword}}</td>
@@ -44,6 +45,10 @@
                                         <button class="btn btn-outline-danger" type="submit">Hapus</button>
                                     </form>
                                 </td>
+                            <td>
+                                <a href="{{route('kelas8.ips.soal.ubah',$dailyTest->id)}} " class="btn btn-warning">Ubah</a>
+                            </td>
+
                         </tbody>
                         @endforeach
                     </table>

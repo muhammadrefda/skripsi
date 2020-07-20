@@ -15,7 +15,7 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <p class="m-0 font-weight-bold text-primary">silahkan pilih bab terkait</p>
+                <h5 class="m-0 font-weight-bold text-primary">Silahkan pilih bab terkait</h5>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -23,12 +23,14 @@
                         <thead>
                         <tr>
                             <th>Nama </th>
+                            <th>Aksi</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($chapters as $chapter)
                             <tr>
                                 <td><a href="{{route('kelas7.ipa.soal')}}">{{$chapter->name}}</a></td>
+                                <td><a class="btn btn-outline-primary" href="{{route('kelas7.ipa.soal.tampil')}}">Lihat</a></td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -36,6 +38,5 @@
                 </div>
             </div>
         </div>
-
     </div>
 @endsection

@@ -8,7 +8,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active"><a href="/mata-pelajaran7/">Mata Pelajaran</a></li>
-                <li class="breadcrumb-item"><a href="{{route('kelas7.bind.soal')}}">Bab </a></li>
+                <li class="breadcrumb-item"><a href="{{route('kelas7.bind')}}">Bab </a></li>
                 <li class="breadcrumb-item"><a href="">Soal </a></li>
             </ol>
         </nav>
@@ -22,27 +22,33 @@
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <a class="btn btn-outline-warning text-success" href="{{route('kelas7.bind.create')}}">Tambah Soal</a>
+                        <a class="btn btn-primary" href="{{route('kelas7.bind.create')}}">Tambah Soal</a>
                         <hr>
                         <thead>
                         <tr>
+                            <th>Nomor</th>
                             <th>soal </th>
                             <th>jawaban</th>
                             <th>kata kunci</th>
-                            <th>aksi</th>
+                            <td colspan="2">Aksi</td>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($dailyTests as $dailyTest)
-                                <td>{{$dailyTest->question}}</td>
+                            <td>{{$loop->iteration}}</td>
+
+                            <td>{{$dailyTest->question}}</td>
                                 <td>{{$dailyTest->answer_teacher}}</td>
                                 <td>{{$dailyTest->keyword}}</td>
                                 <td>
                                     <form action="{{route('kelas7.bind.soal.hapus',$dailyTest->id)}}" method="POST" onsubmit="return confirm('Yakin menghapus soal ini?')">
                                         @csrf
                                         <input type="hidden" name="_method" value="DELETE"/>
-                                        <button class="btn btn-outline-danger" type="submit">Hapus</button>
+                                        <button class="btn btn-danger" type="submit">Hapus</button>
                                     </form>
+                                </td>
+                                <td>
+                                    <a href="{{route('kelas7.bind.soal.ubah',$dailyTest->id)}} " class="btn btn-warning">Ubah</a>
                                 </td>
                         </tbody>
                         @endforeach

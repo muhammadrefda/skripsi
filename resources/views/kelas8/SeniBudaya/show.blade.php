@@ -26,14 +26,15 @@
                         <hr>
                         <thead>
                         <tr>
+                            <th>nomor</th>
                             <th>soal </th>
                             <th>jawaban</th>
                             <th>kata kunci</th>
-                            <th>aksi</th>
-                        </tr>
+                            <td colspan="2">Aksi</td>                        </tr>
                         </thead>
                         <tbody>
                         @foreach($dailyTests as $dailyTest)
+                            <td>{{$loop->iteration}}</td>
                                 <td>{{$dailyTest->question}}</td>
                                 <td>{{$dailyTest->answer_teacher}}</td>
                                 <td>{{$dailyTest->keyword}}</td>
@@ -44,6 +45,9 @@
                                         <button class="btn btn-outline-danger" type="submit">Hapus</button>
                                     </form>
                                 </td>
+                            <td>
+                                <a href="{{route('kelas8.senibudaya.soal.ubah',$dailyTest->id)}} " class="btn btn-warning">Ubah</a>
+                            </td>
                         </tbody>
                         @endforeach
                     </table>

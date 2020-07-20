@@ -16,10 +16,6 @@ class DailyTestIPS7Controller extends Controller
      */
     public function index()
     {
-//
-//        $dailyTests = DailyTest::all();
-//        return view('kelas7.soal.index')
-//            ->with(['dailyTests' => $dailyTests,]);
 
         $chapters = Chapter::where([["subject_id", "=", 1], ["grade_id", "=", 2]])->get();
         return view('kelas7.soal.index',compact('chapters'));
@@ -84,12 +80,14 @@ class DailyTestIPS7Controller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param $dailyTest
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
     public function edit($id)
     {
-        //
+        $dailyTest = DailyTest::findOrFail($id);
+
+        return view('kelas7.IPS.edit', ['dailyTest' => $dailyTest]);
     }
 
     /**
@@ -99,16 +97,21 @@ class DailyTestIPS7Controller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
-    public function update(Request $request, DailyTest $dailyTest)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-        ]);
+        $dailyTest = DailyTest::findOrFail($id);
 
-        $dailyTest->update($request->all());
+        $dailyTest->question = $request->get('question');
+        $dailyTest->answer_teacher = $request->get('answer_teacher');
+        $dailyTest->keyword = $request->get('keyword');
 
-        return redirect()->route('soal.index')
-            ->with('success',' updated successfully.');
+        $dailyTest->save();
+
+        return redirect()
+            ->route('kelas7.ips.soal.tampil')
+            ->with('status','Great! Updated successfully');
     }
+
 
     /**
      * Remove the specified resource from storage.

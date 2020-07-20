@@ -25,7 +25,9 @@ class Penjaskes7Controller extends Controller
     }
 
     public function showBab(){
+
         $chapters = Chapter::where([["subject_id", "=", 6], ["grade_id", "=", 1]])->get();
+
         return view('kelas7.Penjaskes.soal',compact('chapters'));
 
     }
@@ -93,10 +95,46 @@ class Penjaskes7Controller extends Controller
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param $dailyTest
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
+     */
+    public function edit($id)
+    {
+        $dailyTest = DailyTest::findOrFail($id);
+
+        return view('kelas7.Penjaskes.edit', ['dailyTest' => $dailyTest]);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $dailyTest = DailyTest::findOrFail($id);
+
+        $dailyTest->question = $request->get('question');
+        $dailyTest->answer_teacher = $request->get('answer_teacher');
+        $dailyTest->keyword = $request->get('keyword');
+
+        $dailyTest->save();
+
+        return redirect()
+            ->route('kelas7.penjas.soal.tampil')
+            ->with('status','Great! Updated successfully');
+    }
+
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
      */
     public function destroy($id)
     {

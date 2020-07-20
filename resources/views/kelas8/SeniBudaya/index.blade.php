@@ -6,8 +6,8 @@
 
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item "><a href="/mata-pelajaran8">Mata Pelajaran</a></li>
-                <li class="breadcrumb-item active"><a href="">Bab </a></li>
+                <li class="breadcrumb-item "><a href="{{route('mata-pelajaran8.index')}}">Mata Pelajaran</a></li>
+                <li class="breadcrumb-item active"><a href="{{route('kelas8.senibudaya')}}">Bab </a></li>
                 <li class="breadcrumb-item"><a href="">Soal </a></li>
             </ol>
         </nav>
@@ -23,12 +23,14 @@
                         <thead>
                         <tr>
                             <th>Nama </th>
+                            <th>Aksi</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($chapters as $chapter)
                             <tr>
                                 <td><a href="{{route('kelas8.senibudaya.soal')}}">{{$chapter->name}}</a></td>
+                                <td><a class="btn btn-outline-primary" href="{{route('kelas8.senibudaya.soal.tampil')}}">Lihat</a></td>
                             </tr>
                         @endforeach
                         </tbody>

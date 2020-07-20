@@ -1,20 +1,11 @@
 @extends('master')
 @section('content')
-
-    <!-- Begin Page Content -->
     <div class="container-fluid">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item active"><a href="/mata-pelajaran9">Mata Pelajaran</a></li>
-                <li class="breadcrumb-item"><a href="/bab9">Bab </a></li>
-                <li class="breadcrumb-item"><a href="/soal9">Soal </a></li>
-            </ol>
-        </nav>
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <p class="m-0 font-weight-bold text-primary">silahkan pilih mata pelajaran</p>
+                <h5 class="m-0 font-weight-bold text-primary">Silahkan Pilih Mata Pelajaran</h5>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
