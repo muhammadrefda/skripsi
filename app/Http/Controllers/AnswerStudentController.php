@@ -53,7 +53,7 @@ class AnswerStudentController extends Controller
             ->select('daily_tests.question')
             ->where('grades.id','=',1)
             ->where('subjects.id','=',1)
-            ->where('chapters.id','=',1)
+            ->where('chapters.id','=',16)
             ->get();
         return response()->json(['data' => $chapters], 200);
     }
