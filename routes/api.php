@@ -71,7 +71,7 @@ Route::resource('tampilin-jawaban','AnswerStudentController');
 
 Route::post('jawaban/siswa','AnswerStudentController@student_answer');
 
-Route::get('tes','AnswerStudentController@simpan');
+Route::get('pertanyaan/ips','AnswerStudentController@simpan');
 
 
 
