@@ -1,1 +1,3 @@
-Sebuah ulangan harian merupakan suatu proses untuk mengukur tingkat kepahaman seorang siswa pada suatu mata pelajaran. Sebuah ujian terbagi menjadi 2 tipe, Paper Based Test (PBT) dan Computer Based Test (CBT). SMP AMALIYAH JAKARTA sudah beralih dari Paper Based Test (PBT) ke Computer Based Test (CBT), tetapi untuk Computer Based Test (CBT) hanya pada tes yang berformat pilihan ganda. Untuk tes yang mempunyai format esai belum menggunakan sistem Computer Based Test (CBT). Computer Based Test (CBT) menggunakan mobile atau desktop untuk pelaksanaan tes serta web untuk memasukkan data-data soal maupun jawaban. Pembuatan sistem Computer Based Test (CBT) untuk bagian soal esai dibangun dengan arsitektur monolitik.
+Skripsi ini berjudul : Implementasi Arsitektur Monolitik Pada Tes Berbentuk Esai Berbasis Web
+
+Pada aplikasi ini terdiri dari admin panel untuk memanage soal serta api untuk menghubungkan backend ke mobile
